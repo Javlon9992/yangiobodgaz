@@ -2768,7 +2768,7 @@ async def sendWiki(message: types.Message):
         if word.lower() in i.lower():
             await message.answer(i)
             s = s+1
-    if s > 0:
+    if s < 1:
         await message.answer("Bunday abonent raqam topilmadi. \nTekshirib qaytadan kiritib ko'ring.")
 
 if __name__ == '__main__':
