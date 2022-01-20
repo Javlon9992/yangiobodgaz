@@ -2761,15 +2761,15 @@ async def sendWiki(message: types.Message):
 "Ф.И.Ш:  UMAROV ERKIN DANIYAROVICH  \nAбонент № 110318 \nМахалла: Болгали\nХисоблагич № TPGR036120095958\nКўрсаткич: 1329 м3\nКўрсаткич вақти: 19.01.2022 07:00:00\nХақдорлик: 159572 сўм\n20.01.2022 йил соат 17 45 холатига",
 "Ф.И.Ш:  Ибрагимов Аъззамкул  \nAбонент № 110320 \nМахалла: Болгали\nХисоблагич № TPGR036120096214\nКўрсаткич: 5552 м3\nКўрсаткич вақти: 20.01.2022 07:00:00\nХақдорлик: 419543 сўм\n20.01.2022 йил соат 17 45 холатига",
 "Ф.И.Ш:  Уралова Башорат  \nAбонент № 110337 \nМахалла: Болгали\nХисоблагич № TPGR036120037639\nКўрсаткич: 5555 м3\nКўрсаткич вақти: 16.01.2022 07:00:00\nХақдорлик: 69050 сўм\n20.01.2022 йил соат 17 45 холатига"]
-    s=0
+    s = 0
     word = message.text
     for i in words:
     #for word in words[i]:
         if word.lower() in i.lower():
             await message.answer(i)
             s = s+1
-    if s == 2733:
-        await message.answer("Bunday abonent raqam mavjud emas. \nQaytadan kiritib ko'ring.")
+    if s > 2733:
+        await message.answer("Bunday abonent raqam topilmadi. \nQaytadan kiritib ko'ring.")
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
